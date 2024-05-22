@@ -87,6 +87,12 @@ section {
     margin-top: 0;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    text-transform: none;
+}
+
 #menu-btn {
     font-size: 3rem;
     color: var(--main-color);
