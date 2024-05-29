@@ -40,13 +40,29 @@ document.querySelectorAll('.image-slider img').forEach(images => {
 //     },
 // });
 
+const registerForm = document.querySelector('.register');
+const form = document.getElementById('form');
+
 document.addEventListener('DOMContentLoaded', function () {
+    const registerForm = document.querySelector('.register');
+    const form = document.getElementById('form');
+    const e6 = document.getElementById('e6');
+
+    form.addEventListener('submit', function (e) {
+        const phone = document.querySelector('input[name="phone"]').value.trim();
+
+        if (!/^\d{10}$/.test(phone)) {
+            e.preventDefault();
+            e6.innerText = "Phone number must be 10 digits";
+            e6.style.color = "red";
+        }
+    });
+
     const loginLink = document.getElementById('login-link');
     const log1 = document.getElementById('log1');
     const registerLink = document.getElementById('register-link');
     const regLink = document.getElementById('Reg-link');
     const loginForm = document.querySelector('.login');
-    const registerForm = document.querySelector('.register');
 
     loginLink.addEventListener('click', function (e) {
         e.preventDefault();
@@ -58,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         registerForm.style.display = 'block';
     });
-    
+
     log1.addEventListener('click', function (e) {
         e.preventDefault();
         loginForm.style.display = 'block';
@@ -78,19 +94,67 @@ document.addEventListener('DOMContentLoaded', function () {
         loginForm.style.display = 'none';
     });
 });
+const urlParams = new URLSearchParams(window.location.search);
+    const registrationStatus = urlParams.get('registration');
+    const logst = urlParams.get('login');
+
+    if (registrationStatus === 'success') {
+        alert('Registration successful');
+    }
+    if (registrationStatus === 'failed') {
+        valph();
+    }
+    if (logst === 'success') {
+        alert('Login successful');
+    }
+    if (logst === 'failed') {
+        alert('Account not found. Please register.');
+    }
 
 // document.addEventListener('DOMContentLoaded', function () {
-//     // Add event listener to the form submission
-//     const reviewForm = document.querySelector('.review-form');
-//     reviewForm.addEventListener('submit', function (event) {
-//         event.preventDefault(); // Prevent the form from submitting normally
+//     const loginLink = document.getElementById('login-link');
+//     const log1 = document.getElementById('log1');
+//     const registerLink = document.getElementById('register-link');
+//     const regLink = document.getElementById('Reg-link');
+//     const loginForm = document.querySelector('.login');
 
-//         // Retrieve user's review input
-//         const userInput = document.getElementById('user-review').value;
+//     loginLink.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         loginForm.style.display = 'block';
+//         registerForm.style.display = 'none';
+//     });
+    
+//     regLink.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         registerForm.style.display = 'block';
+//     });
 
-//         // Update the content dynamically
-//         const reviewContent = document.querySelector('.review-content');
-//         reviewContent.innerHTML = userInput;
+//     // form.addEventListener('submit',(e)=>{
+//     //     e.preventDefault();
+//     //     valph();
+//     // })
+//     function valph(){
+//         registerForm.style.display = 'block';
+//         document.getElementById('e6').innerText = "Phone number must be 10 digits";
+//     }
+    
+//     log1.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         loginForm.style.display = 'block';
+//         registerForm.style.display = 'none';
+//     });
+
+//     registerLink.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         registerForm.style.display = 'block';
+//         loginForm.style.display = 'none';
+//     });
+
+//     const registerAnchor = document.querySelector('.register-link a');
+//     registerAnchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         registerForm.style.display = 'block';
+//         loginForm.style.display = 'none';
 //     });
 // });
 
@@ -110,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        addReview(name, reviewText, rating);y
+        addReview(name, reviewText, rating);
         reviewForm.reset();
     });
 });
@@ -147,16 +211,19 @@ function addReview(name, review, rating) {
     reviewBody.appendChild(newRow);
 }
 
-    document.addEventListener('click', function (m) {
-        const log = document.getElementById('logg');
-        if (!div.contains(m.target)) {
-            div.style.display = 'none';
-        }
-    });
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const registrationStatus = urlParams.get('registration');
+    // const logst=urlParams.get('login');
 
-    document.addEventListener('click', function (m) {
-        const log = document.getElementById('register');
-        if (!div.contains(m.target)) {
-            div.style.display = 'none';
-        }
-    });
+    // if (registrationStatus === 'success') {
+    //   alert('Registration successful');
+    // }
+    // if (registrationStatus === 'failed') {
+    //   valph();
+    // }
+    // if (logst === 'success') {
+    //   alert('Login successful');
+    // }
+    // if(logst === 'failed'){
+    //     alert('Account not found. Please register.');
+    // }

@@ -52,6 +52,34 @@ section {
     font-size: 3rem;
 }
 
+.buytn{
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border: var(--border);
+    background: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: #fff;
+    border-color: #ffffff;
+}
+
+.btn {
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border: var(--border);
+    color:#5f330a;
+    background: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+
 /* HEADER */
 
 .header {
@@ -105,7 +133,7 @@ input[type="password"] {
 .home {
     min-height: 100vh;
     padding-top: 12rem;
-    background: url(../image/home-bg.jpg) no-repeat;
+    background: url(bg.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -146,7 +174,7 @@ input[type="password"] {
 
 .home .row .content h3 {
     font-size: 6.5rem;
-    color: var(--main-color);
+    color: white;
     text-transform: uppercase;
 }
 
@@ -285,6 +313,12 @@ input[type="password"] {
     margin: -15px 0 15px;
 }
 
+#e6{
+    color: red;
+    font-weight: 100;
+    font-size: medium;
+}
+
 .remember-forgot a{
     color:rgb(256, 256, 256);
     text-decoration: none;
@@ -341,12 +375,18 @@ input[type="password"] {
     text-decoration: none;
 }
 
-
+.register{
+    margin-top: 2.6%;
+    padding-bottom: 0%;
+}
+::placeholder{
+    color: #ffffff;
+}
     
 /* MENU */
 
 .menu {
-    background: url(../image/menu-bg.jpg) no-repeat;
+    background: url(/image/menu-bg.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -398,235 +438,11 @@ input[type="password"] {
     line-height: 1.8;
 }
 
-/* REVIEW
-
-.review .review-slider {
-    padding: 7rem 0;
-}
-
-.review .review-slider .box {
-    border: var(--border);
-    border-radius: var(--border-radius);
-    text-align: center;
-    position: relative;
-    z-index: 0;
-    padding: 2rem;
-}
-
-.review .review-slider .box .fa-quote-left {
-    position: absolute;
-    top: 2rem;
-    left: 2.5rem;
-    font-size: 6rem;
-    color: #ccc;
-    z-index: -1;
-}
-
-.review .review-slider .box .fa-quote-right {
-    position: absolute;
-    bottom: 2rem;
-    right: 2.5rem;
-    font-size: 6rem;
-    color: #ccc;
-    z-index: -1;
-}
-
-.review .review-slider .box:hover .fa-quote-left {
-    top: -6.5rem;
-}
-
-.review .review-slider .box:hover .fa-quote-right {
-    bottom: -6.5rem;
-}
-
-.review .review-slider .box img {
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
-    margin-bottom: .7rem;
-}
-
-.review .review-slider .box .stars {
-    padding: .5rem 0
-}
-
-.review .review-slider .box .stars i {
-    font-size: 1.7rem;
-    color: var(--main-color);
-}
-
-.review .review-slider .box p {
-    font-size: 1.6rem;
-    color: var(--main-color);
-    padding: 1rem 0;
-    line-height: 1.8;
-}
-
-.review .review-slider .box h3 {
-    font-size: 2.2rem;
-    color: var(--main-color);
-    line-height: 1.8;
-}
-
-.review .review-slider .box span {
-    font-size: 1.5rem;
-    color: var(--main-color);
-}
-
-
-.review .review-form {
-    padding: 2rem;
-    border: var(--border);
-    border-radius: var(--border-radius);
-    text-align: center;
-}
-
-.review .review-form .review-textarea {
-    width: 100%;
-    height: 10rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    font-size: 1.6rem;
-    border: var(--border);
-    border-radius: var(--border-radius);
-}
-
-.review .review-form .review-name {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-    border: var(--border);
-    border-radius: var(--border-radius);
-}
-
-.review .review-form .btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.6rem;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    background-color: var(--main-color);
-    color: #fff;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-.review .review-form .btn:hover {
-    background-color: #381;
-} 
-
-.swiper-pagination-bullet {
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 0;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--main-color);
-}*/
-
-.review-box {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-}
-
-.review-box .heading {
-    font-size: 2.5rem;
-    color: var(--main-color);
-    margin-bottom: 1.5rem;
-}
-
-.review-box form .input-box {
-    margin-bottom: 1.5rem;
-}
-
-.review-box form .input-box input,
-.review-box form .input-box textarea,
-.review-box form .input-box select {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.6rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.review-box form .input-box select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="%23000000" d="M6 8L0 0h12z"/></svg>');
-    background-repeat: no-repeat;
-    background-position-x: calc(100% - 10px);
-    background-position-y: center;
-    background-size: 8px;
-}
-
-.review-box form .btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.6rem;
-    color: #fff;
-    background-color: var(--main-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.review-box form .btn:hover {
-    background-color: darken(var(--main-color), 10%);
-}
-
-.reviews-container {
-    margin-top: 2rem;
-}
-
-.review-table {
-    margin-top: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.table-header {
-    background-color: #f1f1f1;
-    display: flex;
-    padding: 10px;
-    font-weight: bold;
-    border-bottom: 1px solid #ddd;
-}
-
-.column {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-}
-
-.table-body .row {
-    display: flex;
-    border-bottom: 1px solid #ddd;
-}
-
-.row:last-child {
-    border-bottom: none;
-}
-
-.row .column {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-}
-
 
 /* BOOK */
 
 .book {
-    background: url(../image/book-bg.jpg);
+    background: url(/image/book-bg.jpg);
     background-position: center;
     background-size: cover;
 }
