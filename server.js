@@ -29,22 +29,59 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve static files (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname)));
 
-// Handle form submissions
-app.post('/submit', (req, res) => {
-  // Retrieve data from the form submission
-  const { username, email, password } = req.body;
+// Handle registration form submissions
+app.post('/register', (req, res) => {
+  const { username, email, password, confirm_password, phone } = req.body;
 
-  // Insert the data into the database
-  const sql = 'INSERT INTO data VALUES (?, ?, ?)';
-  connection.query(sql, [username, email, password], (err, result) => {
+  // Check if the password and confirm_password match
+  if (password !== confirm_password) {
+      res.status(400).send('Passwords do not match');
+      return;
+  }
+
+  // Check if the phone number is 10 digits
+  if (!/^\d{10}$/.test(phone)) {
+      res.redirect('/index?registration=failed');
+      return;
+  }
+
+  const sql = 'INSERT INTO data VALUES (?, ?, ?, ?)';
+  connection.query(sql, [username, email, password, phone], (err, result) => {
+      if (err) {
+          console.error('Error inserting data into the database:', err);
+          res.status(500).send('Internal Server Error');
+          return;
+      }
+      console.log('Data inserted successfully');
+      res.redirect('/index?registration=success');
+  });
+});
+
+// Handle login form submissions
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // Check if the user exists in the database
+  const sql = 'SELECT * FROM data WHERE name = ? AND password = ?';
+  connection.query(sql, [username, password], (err, results) => {
     if (err) {
-      console.error('Error inserting data into the database:', err);
+      console.error('Error querying the database:', err);
       res.status(500).send('Internal Server Error');
       return;
     }
-    console.log('Data inserted successfully');
-    res.status(200).send('Data inserted successfully');
+
+    if (results.length > 0) {
+      res.redirect('/index?login=success');
+    } else {
+      // User does not exist
+      res.redirect('/index?login=failed');
+    }
   });
+});
+
+// Serve the index page
+app.get('/index', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
