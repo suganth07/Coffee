@@ -596,9 +596,7 @@ input[type="password"] {
     margin: .7rem 0;
 }
 
-
-
-.book form textarea {
+.book form txtarea {
     height: 15rem;
     resize: none;
 }
