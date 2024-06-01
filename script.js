@@ -111,53 +111,6 @@ const urlParams = new URLSearchParams(window.location.search);
         alert('Account not found. Please register.');
     }
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const loginLink = document.getElementById('login-link');
-//     const log1 = document.getElementById('log1');
-//     const registerLink = document.getElementById('register-link');
-//     const regLink = document.getElementById('Reg-link');
-//     const loginForm = document.querySelector('.login');
-
-//     loginLink.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         loginForm.style.display = 'block';
-//         registerForm.style.display = 'none';
-//     });
-    
-//     regLink.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         registerForm.style.display = 'block';
-//     });
-
-//     // form.addEventListener('submit',(e)=>{
-//     //     e.preventDefault();
-//     //     valph();
-//     // })
-//     function valph(){
-//         registerForm.style.display = 'block';
-//         document.getElementById('e6').innerText = "Phone number must be 10 digits";
-//     }
-    
-//     log1.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         loginForm.style.display = 'block';
-//         registerForm.style.display = 'none';
-//     });
-
-//     registerLink.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         registerForm.style.display = 'block';
-//         loginForm.style.display = 'none';
-//     });
-
-//     const registerAnchor = document.querySelector('.register-link a');
-//     registerAnchor.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         registerForm.style.display = 'block';
-//         loginForm.style.display = 'none';
-//     });
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
     const reviewForm = document.getElementById('review-form');
     const reviewsContainer = document.querySelector('.reviews-container');
@@ -210,20 +163,10 @@ function addReview(name, review, rating) {
     // Append the new row to the table body
     reviewBody.appendChild(newRow);
 }
-
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const registrationStatus = urlParams.get('registration');
-    // const logst=urlParams.get('login');
-
-    // if (registrationStatus === 'success') {
-    //   alert('Registration successful');
-    // }
-    // if (registrationStatus === 'failed') {
-    //   valph();
-    // }
-    // if (logst === 'success') {
-    //   alert('Login successful');
-    // }
-    // if(logst === 'failed'){
-    //     alert('Account not found. Please register.');
-    // }
+document.querySelector('.read-more').addEventListener('click', function(event) {
+    event.preventDefault();
+    const moreText = " Tall (354ml) - 63 kcal / Grande (473ml) - 84 kcal / Venti (591ml) 104.97 kcal Allergen - Contains Milk An average active adult requires 2000 kcal energy per day, however, calorie needs may vary.";
+    const cappPara = document.querySelector('.capp');
+    cappPara.innerHTML = cappPara.innerHTML.replace('Read More', '');
+    cappPara.innerHTML += moreText;
+});
