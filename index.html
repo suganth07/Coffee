@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Coffee</title>
+    <title>Coffee Club</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -17,7 +17,7 @@
     <header class="header">
         <div id="menu-btn" class="fas fa-bars"></div>
 
-        <a href="#" class="logo">Hot coffee <i class="fas fa-mug-hot"></i></a>
+        <a href="#" class="logo">Coffee Club <i class="fas fa-mug-hot"></i></a>
 
         <nav class="navbar">
             <a href="#home">home</a>
@@ -35,7 +35,7 @@
         <div class="row">
             <div class="content">
                 <h3>fresh coffee in the morning</h3>
-                <a href="#" class="buytn">buy one now</a>
+                <a href="#menu" class="buytn">buy one now</a>
             </div>
 
             <div class="image">
@@ -55,13 +55,39 @@
 
         <div class="row">
             <div class="image">
-                <img src="image/about-img.png" alt="">
+                <img src="./image/ICW_Live_Event_Day5_1_decd6c1b6f.jpg" alt="">
             </div>
 
             <div class="content">
-                <h3 class="title">what's make our coffee special!</h3>
-                <p>At coffee club , we pride ourselves on offering premium quality, expertly crafted beverages, and a cozy atmosphere. With a commitment to sustainability, exceptional customer service, and a diverse menu, we create an unforgettable experience for every guest. Discover why we’re a community favorite.</p>
-                <a href="#" class="btn">read more</a>
+                <p>At Coffee Club, we believe in creating an exceptional experience for every customer who walks through our doors. Here’s why you should choose us:</p>
+    <a href="#" class="btn" id="read-more-btn">Read More</a>
+
+    <!-- Pop-up Box -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Why Choose Us?</h2>
+            <div class="popup-body">
+                <p><b>1. Premium Quality Ingredients</b><br>
+                We are committed to using only the finest, responsibly sourced ingredients in all our offerings. From our rich, aromatic coffee beans to our freshly baked pastries, quality is our top priority.<br><br>
+                <b>2. Expertly Crafted Beverages</b><br>
+                Our baristas are trained to perfection, bringing you a delightful range of beverages, from classic espressos and cappuccinos to innovative seasonal specials. Each cup is brewed to perfection, ensuring you enjoy the best flavors with every sip.<br><br>
+                <b>3. Cozy and Inviting Atmosphere</b><br>
+                Our café is designed to be your home away from home. With comfortable seating, warm lighting, and a welcoming ambiance, it’s the perfect place to relax, work, or catch up with friends.<br><br>
+                <b>4. Sustainable Practices</b><br>
+                We care deeply about our environment and community. That’s why we prioritize eco-friendly practices, such as using biodegradable cups and supporting local farmers. We’re on a mission to make a positive impact on the world, one cup at a time.<br><br>
+                <b>5. Exceptional Customer Service</b><br>
+                Our friendly and knowledgeable staff are here to make your experience memorable. Whether you need a recommendation or have a special request, we’re always ready to assist with a smile.<br><br>
+                <b>6. Delicious and Diverse Menu</b><br>
+                From hearty breakfast options to light lunches and indulgent desserts, our menu caters to a wide range of tastes and dietary preferences. We offer a variety of options, including vegan and gluten-free choices, so everyone can find something they love.<br><br>
+                <b>7. Community-Oriented</b><br>
+                We’re more than just a café; we’re a part of the community. We host regular events, support local artists, and create a space where everyone feels welcome. Come join us and be a part of our vibrant community.<br><br>
+                <b>8. Convenient Locations and Online Ordering</b><br>
+                We know life can be busy, so we’ve made it easy for you to enjoy your favorites. With multiple locations and a user-friendly online ordering system, you can post your coffee fix whether you’re on the go or relaxing at home.</p>
+            </div>
+        </div>
+    </div>
+    
                 <div class="icons-container">
                     <div class="icons">
                         <img src="image/about-icon-1.png" alt="">
@@ -134,7 +160,7 @@
             </a>
 
             <a href="#" class="box">
-                <img src="image/bel" alt="">
+                <img src="image/Iced Belgium Chocolate Latte.jpeg" alt="">
                 <div class="content">
                     <h3>Iced Belgium Chocolate Latte</h3>
                     <p>Espresso with decadent Belgian chocolate sauce, mocha sauce and steamed milk served over ice. Topped with whipped chocolate topping and dark chocolate chips.</p>
@@ -148,14 +174,16 @@
     <!-- BOOK -->
     <section class="book" id="book">
         <h1 class="heading">booking <span>reserve a table</span></h1>
-
-        <form action="">
-            <input type="text" placeholder="Name" class="box">
-            <input type="email" placeholder="Email" class="box">
+        
+        <div class="ot">
+        <form action="" class="reserve">
+            <div class="txtarea">
+            <input type="text" placeholder="Name"     class="box">
+            <input type="email" placeholder="Email"   class="box">
             <input type="number" placeholder="Number" class="box">
-            <textarea name="" placeholder="Message" class="box" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" class="btn">
-        </form>
+            <textarea name="" placeholder="Message"   class="box" id="" cols="30" rows="10"></textarea>
+            </div><input type="submit" value="send message" class="btn">
+        </form></div>
     </section>
 
     <!-- LOGIN -->
@@ -203,7 +231,7 @@
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="input-box">
-                <input type="text" name="phone" placeholder="PhoneNo" required>
+                <input type="text" name="phone" placeholder="PhoneNumber" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div id="e6"></div>
@@ -255,46 +283,46 @@
 
     <!-- FOOTER -->
     <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>OUR BRANCH</h3>
-                <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Coimbatore</a>
-                <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Chennai</a>
-                <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Bangalore</a>
-                <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Mumbai</a>
-                <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Kolkata</a>
-            </div>
-    
-            <div class="box">
-                <h3>QUICK LINKS</h3>
-                <a href="#home">  <img src="./image/arrow-forward-outline.svg" alt="arrow"> Home</a>
-                <a href="#about"> <img src="./image/arrow-forward-outline.svg" alt="arrow"> About</a>
-                <a href="#menu">  <img src="./image/arrow-forward-outline.svg" alt="arrow"> Menu</a>
-                <a href="#review"><img src="./image/arrow-forward-outline.svg" alt="arrow"> Review</a>
-                <a href="#book">  <img src="./image/arrow-forward-outline.svg" alt="arrow"> Book Table</a>
-                <a href="#login"> <img src="./image/arrow-forward-outline.svg" alt="arrow"> Login</a>
-            </div>
-    
-            <div class="box">
-                <h3>CONTACT US</h3>
-                <a href="#"><img src="./image/call-outline.svg" alt="phone"> +91-6380417142</a>
-                <a href="#"><img src="./image/call-outline.svg" alt="phone"> +91-6369314902</a>
-                <a href="#"><img src="./image/mail-outline.svg" alt="email"> coffeeclub@gmail.com</a>
-                <a href="#"><img src="./image/location-outline.svg" alt="location"> Coimbatore, India</a>
-            </div>
-    
-            <div class="box">
-                <h3>SOCIAL MEDIA</h3>
-                <a href="#"><img src="./image/logo-facebook.svg" alt="Facebook"> Facebook</a>
-                <a href="#"><img src="./image/logo-twitter.svg" alt="Twitter"> Twitter</a>
-                <a href="#"><img src="./image/logo-instagram.svg" alt="Instagram"> Instagram</a>
-                <a href="#"><img src="./image/logo-linkedin.svg" alt="LinkedIn"> LinkedIn</a>
-            </div>
+    <div class="ffbox-container">
+        <div class="ffbox">
+            <h3>OUR BRANCH</h3>
+            <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Coimbatore</a>
+            <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Chennai</a>
+            <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Bangalore</a>
+            <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Mumbai</a>
+            <a href="#"><img src="./image/location-outline.svg" alt="arrow"> Kolkata</a>
         </div>
-    
-        <hr>
-        <div class="credit"> Created By <span>Siva Prasanth & Suganth</span> | All Rights Reserved</div>
-    </section>
+
+        <div class="ffbox">
+            <h3>QUICK LINKS</h3>
+            <a href="#home">  <img src="./image/arrow-forward-outline.svg" alt="arrow"> Home</a>
+            <a href="#about"> <img src="./image/arrow-forward-outline.svg" alt="arrow"> About</a>
+            <a href="#menu">  <img src="./image/arrow-forward-outline.svg" alt="arrow"> Menu</a>
+            <a href="#review"><img src="./image/arrow-forward-outline.svg" alt="arrow"> Review</a>
+            <a href="#book">  <img src="./image/arrow-forward-outline.svg" alt="arrow"> Book Table</a>
+            <a href="#login"> <img src="./image/arrow-forward-outline.svg" alt="arrow"> Login</a>
+        </div>
+
+        <div class="ffbox">
+            <h3>CONTACT US</h3>
+            <a href="#"><img src="./image/call-outline.svg" alt="phone"> +91-6380417142</a>
+            <a href="#"><img src="./image/call-outline.svg" alt="phone"> +91-6369314902</a>
+            <a href="#"><img src="./image/mail-outline.svg" alt="email"> coffeeclub@gmail.com</a>
+            <a href="#"><img src="./image/location-outline.svg" alt="location"> Coimbatore, India</a>
+        </div>
+
+        <div class="ffbox">
+            <h3>SOCIAL MEDIA</h3>
+            <a href="#"><img src="./image/logo-facebook.svg" alt="Facebook"> Facebook</a>
+            <a href="#"><img src="./image/logo-twitter.svg" alt="Twitter"> Twitter</a>
+            <a href="#"><img src="./image/logo-instagram.svg" alt="Instagram"> Instagram</a>
+            <a href="#"><img src="./image/logo-linkedin.svg" alt="LinkedIn"> LinkedIn</a>
+        </div>
+    </div>
+
+    <hr>
+    <div class="credit"> Created By <span>Siva Prasanth & Suganth</span> | All Rights Reserved</div>
+</section>
 
     <!-- SWIPER -->
     <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
