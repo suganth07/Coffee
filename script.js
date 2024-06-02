@@ -151,6 +151,7 @@ function addReview(name, review, rating) {
     // Append the new row to the table body
     reviewBody.appendChild(newRow);
 }
+
 document.getElementById('read-more-btn').addEventListener('click', function() {
     document.getElementById('popup').classList.add('show');
 });
@@ -164,4 +165,12 @@ window.addEventListener('click', function(event) {
     if (event.target === popup) {
         popup.classList.remove('show');
     }
+});
+
+document.querySelector('.read-more').addEventListener('click', function(event) {
+    event.preventDefault();
+    const moreText = " Tall (354ml) - 63 kcal / Grande (473ml) - 84 kcal / Venti (591ml) 104.97 kcal Allergen - Contains Milk An average active adult requires 2000 kcal energy per day, however, calorie needs may vary.";
+    const cappPara = document.querySelector('.capp');
+    cappPara.innerHTML = cappPara.innerHTML.replace('Read More', '');
+    cappPara.innerHTML += moreText;
 });

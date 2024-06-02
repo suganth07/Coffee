@@ -527,10 +527,7 @@ input[type="password"] {
 .extra-content {
     display: none;
 }
-.read-more {
-    color: blue;
-    cursor: pointer;
-}
+
 
 .content h3 {
     font-size: 1.8em;
