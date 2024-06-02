@@ -522,13 +522,6 @@ input[type="password"] {
     height: auto;
 }
 
-
-/* Content Styles */
-.extra-content {
-    display: none;
-}
-
-
 .content h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
@@ -749,11 +742,10 @@ input[type="password"] {
 }
 
 
-
 .capp {
     margin: 10px 0;
 }
-.read-more {
+.read-more ,.read-less{
     color: black;
     font-weight:bold;
     cursor: pointer;
@@ -808,4 +800,12 @@ input[type="password"] {
 
 .popup.show {
     right: 0;
+}
+
+.read-less {
+    display: none;
+}
+
+.read-more {
+    font-weight: normal; 
 }
