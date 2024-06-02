@@ -1,5 +1,45 @@
+const loginLink = document.getElementById('login-link');
+const log1 = document.getElementById('log1');
+const registerLink = document.getElementById('register-link');
+const regLink = document.getElementById('Reg-link');
+const loginForm = document.querySelector('.login');
+
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.navbar');
+
+const registerForm = document.querySelector('.register');
+const form = document.getElementById('form');
+
+const urlParams = new URLSearchParams(window.location.search);
+const registrationStatus = urlParams.get('registration');
+const logst = urlParams.get('login');
+const reserve=urlParams.get('Reserve');
+const user=urlParams.get('user');
+
+
+if (registrationStatus === 'success') {
+    alert('Registration successful');
+}
+if (registrationStatus === 'failed') {
+    valph();
+}
+if (logst === 'success') {
+    alert('Login successful');
+}
+if (logst === 'failed') {
+    alert('Account not found. Please register.');
+    registerForm.style.display="block";
+}
+if (reserve === 'success') {
+    alert('Reservation successful');
+}
+if (reserve === 'failed') {
+    alert('Reservation Failed');
+}
+if(user==='notfound'){
+    alert('User not found. Please register.');
+    registerForm.style.display="block";
+}
 
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
@@ -18,12 +58,6 @@ document.querySelectorAll('.image-slider img').forEach(images => {
     };
 });
 
-
-const registerForm = document.querySelector('.register');
-const form = document.getElementById('form');
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const registerForm = document.querySelector('.register');
     const form = document.getElementById('form');
@@ -39,11 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    const loginLink = document.getElementById('login-link');
-    const log1 = document.getElementById('log1');
-    const registerLink = document.getElementById('register-link');
-    const regLink = document.getElementById('Reg-link');
-    const loginForm = document.querySelector('.login');
 
     loginLink.addEventListener('click', function (e) {
         e.preventDefault();
@@ -75,29 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
         loginForm.style.display = 'none';
     });
 });
-const urlParams = new URLSearchParams(window.location.search);
-    const registrationStatus = urlParams.get('registration');
-    const logst = urlParams.get('login');
-    const reserve=urlParams.get('Reserve');
-
-    if (registrationStatus === 'success') {
-        alert('Registration successful');
-    }
-    if (registrationStatus === 'failed') {
-        valph();
-    }
-    if (logst === 'success') {
-        alert('Login successful');
-    }
-    if (logst === 'failed') {
-        alert('Account not found. Please register.');
-    }
-    if (reserve === 'success') {
-        alert('Reservation successful');
-    }
-    if (reserve === 'failed') {
-        alert('Account not found. Please register.');
-    }
 
 document.addEventListener('DOMContentLoaded', function () {
     const reviewForm = document.getElementById('review-form');
@@ -186,3 +192,14 @@ document.addEventListener('DOMContentLoaded', function() {
         readLessLink.style.display = 'none';
     });
 });
+
+
+document.getElementById('cross').addEventListener('click',function(){
+    loginForm.style.display='none';
+    registerForm.style.display='none';
+})
+
+document.getElementById('crossr').addEventListener('click',function(){
+    loginForm.style.display='none';
+    registerForm.style.display='none';
+})

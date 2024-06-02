@@ -74,7 +74,6 @@ app.post('/login', (req, res) => {
     if (results.length > 0) {
       res.redirect('/index?login=success');
     } else {
-      // User does not exist
       res.redirect('/index?login=failed');
     }
   });
@@ -90,19 +89,36 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-app.post('/send-message', (req, res) => {
-  const {name,datetime} = req.body;
 
+app.post('/send-message', (req, res) => {
+  const { name, datetime } = req.body;
+
+  // Split the datetime string into date and time components
   const [date, time] = datetime.split('T');
 
-  const sql = 'UPDATE data SET Resname = ?, resdate = ?, ResTime = ? WHERE name = ?;';
-  connection.query(sql, [name,date,time,name], (err, result) => {
-      if (err) {
-          console.error('Error while reserving table', err);
+  // Query to check if the name exists in the table
+  const checkSql = 'SELECT * FROM data WHERE name = ?';
+  connection.query(checkSql, [name], (checkErr, results) => {
+    if (checkErr) {
+      console.error('Error querying the database:', checkErr);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+
+    if (results.length > 0) {
+      // If name exists, update the reservation details
+      const updateSql = 'UPDATE data SET Resname = ?, resdate = ?, ResTime = ? WHERE name = ?';
+      connection.query(updateSql, [name, date, time, name], (updateErr, updateResult) => {
+        if (updateErr) {
+          console.error('Error while reserving table', updateErr);
           res.status(500).send('Internal Server Error');
           return;
-      }
-      console.log('Table Reserved successfully');
-      res.redirect('/index?Reserve=success');
+        }
+        console.log('Table Reserved successfully');
+        res.redirect('/index?Reserve=success');
+      });
+    } else {
+        res.redirect('/index?user=notfound')
+    }
   });
 });

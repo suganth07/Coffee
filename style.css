@@ -8,6 +8,10 @@
     --border-hover: .2rem dashed var(--main-color);
 }
 
+p{
+    font-weight:700;
+}
+
 * {
     font-family: 'Poppins', sans-serif;
     margin: 0;

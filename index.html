@@ -69,7 +69,7 @@
             <span class="close-btn" id="close-btn">&times;</span>
             <h2>Why Choose Us?</h2>
             <div class="popup-body">
-                <p><b>1. Premium Quality Ingredients</b><br>
+                <p style="font-weight: 100;"><b>1. Premium Quality Ingredients</b><br>
                 We are committed to using only the finest, responsibly sourced ingredients in all our offerings. From our rich, aromatic coffee beans to our freshly baked pastries, quality is our top priority.<br><br>
                 <b>2. Expertly Crafted Beverages</b><br>
                 Our baristas are trained to perfection, bringing you a delightful range of beverages, from classic espressos and cappuccinos to innovative seasonal specials. Each cup is brewed to perfection, ensuring you enjoy the best flavors with every sip.<br><br>
@@ -118,8 +118,8 @@
                     <h3>Cappuccino</h3>
                     <p class="capp">
                         Cold brew with Vanilla Sweet Cream is made with Starbucks cold brew over ice and topped with a house made vanilla sweet cream, which floats on top of the beverage before slowly cascading down.
-                        <span class="extra-content" style="display: none;font-size:11px;font-weight:100"> Tall (354ml) - 63 kcal / Grande (473ml) - 84 kcal / Venti (591ml) 104.97 kcal Allergen - Contains Milk An average active adult requires 2000 kcal energy per day, however, calorie needs may vary.</span>
-                        <a href="#" class="read-more">Read More</a>
+                        <span class="extra-content" style="display: none;font-size:11px;font-weight:700;color:rgb(92, 92, 92)"> Tall (354ml) - 63 kcal / Grande (473ml) - 84 kcal / Venti (591ml) 104.97 kcal Allergen - Contains Milk An average active adult requires 2000 kcal energy per day, however, calorie needs may vary.</span>
+                        <a href="#" class="read-more" style="font-weight:bold;">Read More</a>
                         <a href="#" class="read-less">Read Less</a>
                     </p>
                     
@@ -182,9 +182,9 @@
         <div class="ot">
             <form action="/send-message" method="post" class="reserve">
                 <div class="txtarea">
-                    <input type="text" placeholder="Name"  name="name"  class="box" >
-                    <input type="datetime-local" placeholder="Date Time" name="datetime"  class="box" >
-                    <input type="number" placeholder="Number" class="box">
+                    <input type="text" placeholder="Name"  name="name"  class="box" required>
+                    <input type="datetime-local" placeholder="Date Time" name="datetime"  class="box" required>
+                    <input type="number" placeholder="Number" class="box" required>
                     <textarea name="message" placeholder="Message"   class="box"  id="" cols="1" rows="4"></textarea>
                 </div>
                 <input type="submit" value="send message" class="btn">
@@ -194,6 +194,7 @@
 
     <!-- LOGIN -->
     <div class="login" id="login" id="logg">
+        <a id="cross"><img src="./image/close-outline.svg" alt="" width="20px"></a>
         <form action="/login" method="post">
             <h1>Login</h1>
             <div class="input-box">
@@ -218,6 +219,7 @@
     <!--REGISTER-->
     
     <div class="register" id="register">
+        <a id="crossr"><img src="./image/close-outline.svg" alt="" width="20px"></a>
         <form action="/register" method="post" id="form">
             <h1>Register</h1>
             <div class="input-box">
