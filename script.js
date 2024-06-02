@@ -22,6 +22,8 @@ document.querySelectorAll('.image-slider img').forEach(images => {
 const registerForm = document.querySelector('.register');
 const form = document.getElementById('form');
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const registerForm = document.querySelector('.register');
     const form = document.getElementById('form');
@@ -76,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const urlParams = new URLSearchParams(window.location.search);
     const registrationStatus = urlParams.get('registration');
     const logst = urlParams.get('login');
+    const reserve=urlParams.get('Reserve');
 
     if (registrationStatus === 'success') {
         alert('Registration successful');
@@ -87,6 +90,12 @@ const urlParams = new URLSearchParams(window.location.search);
         alert('Login successful');
     }
     if (logst === 'failed') {
+        alert('Account not found. Please register.');
+    }
+    if (reserve === 'success') {
+        alert('Reservation successful');
+    }
+    if (reserve === 'failed') {
         alert('Account not found. Please register.');
     }
 
@@ -142,10 +151,17 @@ function addReview(name, review, rating) {
     // Append the new row to the table body
     reviewBody.appendChild(newRow);
 }
-document.querySelector('.read-more').addEventListener('click', function(event) {
-    event.preventDefault();
-    const moreText = " Tall (354ml) - 63 kcal / Grande (473ml) - 84 kcal / Venti (591ml) 104.97 kcal Allergen - Contains Milk An average active adult requires 2000 kcal energy per day, however, calorie needs may vary.";
-    const cappPara = document.querySelector('.capp');
-    cappPara.innerHTML = cappPara.innerHTML.replace('Read More', '');
-    cappPara.innerHTML += moreText;
+document.getElementById('read-more-btn').addEventListener('click', function() {
+    document.getElementById('popup').classList.add('show');
+});
+
+document.getElementById('close-btn').addEventListener('click', function() {
+    document.getElementById('popup').classList.remove('show');
+});
+
+window.addEventListener('click', function(event) {
+    const popup = document.getElementById('popup');
+    if (event.target === popup) {
+        popup.classList.remove('show');
+    }
 });

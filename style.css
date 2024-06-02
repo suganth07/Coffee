@@ -575,14 +575,20 @@ input[type="password"] {
     padding: 3rem;
 }
 
+.book .txtarea .box{
+    background-color: #fff;
+    box-shadow: 0.5cap 0.5cap rgb(2, 2, 18);
+}
+
 .book .txtarea .box:focus {
-    border-color: red;
-    background-color: #fff7f3; /* Background color when focused */
-    color: #333; /* Text color when focused */
+    border-color: rgb(244, 244, 244);
+    color: black;
+    text-align: left;
 }
-.book .txtarea .box:focus::placeholder {
-    color: #333; /* Text color when focused */
+.book .txtarea .box::placeholder {
+    color: black;
 }
+
 
 .book form .box {
     width: 100%;
@@ -660,7 +666,7 @@ input[type="password"] {
 }
 
 .footer .ffbox a:hover {
-    color: #f1c40f;
+    color: #ffffff;
     padding-left: 30px;
 }
 

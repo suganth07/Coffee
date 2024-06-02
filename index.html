@@ -115,10 +115,34 @@
                 <img src="image/Cappicunio.jpg" alt="">
                 <div class="content">
                     <h3>Cappuccino</h3>
-                    <p class="capp">
-                        Cold brew with Vanilla Sweet Cream is made with starbucks cold brew over ice and topped with a house made vanilla sweet cream, which floats on top of the beverage before slowly cascading down.
-                        <a href="#" class="read-more">Read More</a>
-                    </p>
+                    <p>At [Coffee Club], we believe in creating an exceptional experience for every customer who walks through our doors. Here’s why you should choose us:</p>
+    <a href="#" class="btn" id="read-more-btn">Read More</a>
+
+    <!-- Pop-up Box -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Why Choose Us?</h2>
+            <div class="popup-body">
+                <p>1. Premium Quality Ingredients<br>
+                We are committed to using only the finest, responsibly sourced ingredients in all our offerings. From our rich, aromatic coffee beans to our freshly baked pastries, quality is our top priority.<br><br>
+                2. Expertly Crafted Beverages<br>
+                Our baristas are trained to perfection, bringing you a delightful range of beverages, from classic espressos and cappuccinos to innovative seasonal specials. Each cup is brewed to perfection, ensuring you enjoy the best flavors with every sip.<br><br>
+                3. Cozy and Inviting Atmosphere<br>
+                Our café is designed to be your home away from home. With comfortable seating, warm lighting, and a welcoming ambiance, it’s the perfect place to relax, work, or catch up with friends.<br><br>
+                4. Sustainable Practices<br>
+                We care deeply about our environment and community. That’s why we prioritize eco-friendly practices, such as using biodegradable cups and supporting local farmers. We’re on a mission to make a positive impact on the world, one cup at a time.<br><br>
+                5. Exceptional Customer Service<br>
+                Our friendly and knowledgeable staff are here to make your experience memorable. Whether you need a recommendation or have a special request, we’re always ready to assist with a smile.<br><br>
+                6. Delicious and Diverse Menu<br>
+                From hearty breakfast options to light lunches and indulgent desserts, our menu caters to a wide range of tastes and dietary preferences. We offer a variety of options, including vegan and gluten-free choices, so everyone can find something they love.<br><br>
+                7. Community-Oriented<br>
+                We’re more than just a café; we’re a part of the community. We host regular events, support local artists, and create a space where everyone feels welcome. Come join us and be a part of our vibrant community.<br><br>
+                8. Convenient Locations and Online Ordering<br>
+                We know life can be busy, so we’ve made it easy for you to enjoy your favorites. With multiple locations and a user-friendly online ordering system, you can get your coffee fix whether you’re on the go or relaxing at home.</p>
+            </div>
+        </div>
+    </div>
                     <span class="price">$8.99</span>
                 </div>
             </div>
@@ -176,12 +200,12 @@
         <h1 class="heading">booking <span>reserve a table</span></h1>
         
         <div class="ot">
-            <form action="" class="reserve">
+            <form action="/send-message" method="post" class="reserve">
                 <div class="txtarea">
-                    <input type="text" placeholder="Name"     style="background-color: rgba(212, 125, 63, 0.3);"  class="box" >
-                    <input type="email" placeholder="Email"   style="background-color: rgba(212, 125, 63, 0.3);"  class="box" >
-                    <input type="number" placeholder="Number" style="background-color: rgba(212, 125, 63, 0.3);"  class="box" >
-                    <textarea name="" placeholder="Message"   style="background-color: rgba(212, 125, 63, 0.3);"  class="box"  id="" cols="30" rows="10"></textarea>
+                    <input type="text" placeholder="Name"  name="name"  class="box" >
+                    <input type="datetime-local" placeholder="Date Time" name="datetime"  class="box" >
+                    <input type="number" placeholder="Number" class="box">
+                    <textarea name="message" placeholder="Message"   class="box"  id="" cols="1" rows="4"></textarea>
                 </div>
                 <input type="submit" value="send message" class="btn">
             </form>
