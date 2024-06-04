@@ -2,7 +2,6 @@ const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const path = require('path');
-const { time } = require('console');
 
 const app = express();
 const port = 3000;
@@ -91,24 +90,24 @@ app.listen(port, () => {
 
 
 app.post('/send-message', (req, res) => {
-  const { name, datetime } = req.body;
+  const { email, datetime } = req.body;
 
   // Split the datetime string into date and time components
   const [date, time] = datetime.split('T');
 
   // Query to check if the name exists in the table
-  const checkSql = 'SELECT * FROM data WHERE name = ?';
-  connection.query(checkSql, [name], (checkErr, results) => {
+  const checkSql = 'SELECT * FROM data WHERE email = ?';
+  connection.query(checkSql, [email], (checkErr, results) => {
     if (checkErr) {
       console.error('Error querying the database:', checkErr);
       res.status(500).send('Internal Server Error');
       return;
     }
-
+    
     if (results.length > 0) {
       // If name exists, update the reservation details
-      const updateSql = 'UPDATE data SET Resname = ?, resdate = ?, ResTime = ? WHERE name = ?';
-      connection.query(updateSql, [name, date, time, name], (updateErr, updateResult) => {
+      const updateSql = 'UPDATE data SET Resname = ?, resdate = ?, ResTime = ? WHERE email = ?';
+      connection.query(updateSql, [email, date, time, email], (updateErr, updateResult) => {
         if (updateErr) {
           console.error('Error while reserving table', updateErr);
           res.status(500).send('Internal Server Error');
