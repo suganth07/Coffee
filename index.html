@@ -1,16 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
-<head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Club</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./responsive.css">
 </head>
 
 <body>
@@ -24,9 +24,10 @@
             <a href="#about">about</a>
             <a href="#menu">menu</a>
             <a href="#review">review</a>
+            <a href="#footer">contact</a>
             <a href="#login" id="login-link">Login</a>
+            
         </nav>
-
         <a href="#book" class="btn">book a table</a>
     </header>
 
@@ -49,6 +50,8 @@
             <img src="image/home-img-3.png" alt="">
         </div>
     </section>
+
+<!-- About -->
 
     <section class="about" id="about">
         <h1 class="heading">about us <span>why choose us</span></h1>
@@ -181,7 +184,7 @@
         <div class="ot">
             <form action="/send-message" method="post" class="reserve">
                 <div class="txtarea">
-                    <input type="email" placeholder="Email"  name="email"  class="box" required>
+                    <input type="text" placeholder="Name"  name="name"  class="box" required>
                     <input type="datetime-local" placeholder="Date Time" name="datetime"  class="box" required>
                     <input type="number" placeholder="Number" class="box" required>
                     <textarea name="message" placeholder="Message"   class="box"  id="" cols="1" rows="4"></textarea>
@@ -192,14 +195,13 @@
     </section>
 
     <!-- LOGIN -->
-    <div class="login" id="login" id="logg">
+    <div class="login" id="login" >
         <a id="cross"><img src="./image/close-outline.svg" alt="" width="20px"></a>
         <form action="/login" method="post">
             <h1>Login</h1>
             <div class="input-box">
                 <input class="in" type="text" name="username" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
-                <p></p>
             </div>
             <div class="input-box">
                 <input class="in" type="password" name="password" placeholder="Password" required>
@@ -210,7 +212,7 @@
                 <a href="#">Forgot Password</a>
             </div>
             <button type="submit" class="lbtn">Login</button>
-            <div class="register-link" id="register-link">
+            <div class="register-link" id="Reg-link">
                 <p>Don't have an account? <a href="#register">Register</a></p>
             </div>
         </form>
@@ -278,9 +280,9 @@
         <h1 class="heading">Reviews <span>What people say</span></h1>
         <div class="review-table">
             <div class="table-header">
-                <div class="">Name</div>
+                <div class="column">Name</div>
                 <div class="column">Review</div>
-                <div class="columcolumnn" >Rating</div>
+                <div class="column" >Rating</div>
             </div>
             <div class="table-body" id="review-body">
             </div>
@@ -290,7 +292,7 @@
 
 
     <!-- FOOTER -->
-    <section class="footer">
+    <section class="footer" id="footer" >
     <div class="ffbox-container">
         <div class="ffbox">
             <h3>OUR BRANCH</h3>
@@ -331,7 +333,6 @@
     <hr>
     <div class="credit"> Created By <span>Siva Prasanth & Suganth</span> | All Rights Reserved</div>
 </section>
-
     <script src="script.js"></script>
 </body>
 

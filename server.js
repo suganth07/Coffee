@@ -33,18 +33,6 @@ app.use(express.static(path.join(__dirname)));
 app.post('/register', (req, res) => {
   const { username, email, password, confirm_password, phone} = req.body;
 
-  // Check if the password and confirm_password match
-  if (password !== confirm_password) {
-      res.status(400).send('Passwords do not match');
-      return;
-  }
-
-  // Check if the phone number is 10 digits
-  if (!/^\d{10}$/.test(phone)) {
-      res.redirect('/index?registration=failed');
-      return;
-  }
-
   const sql = 'INSERT INTO data VALUES (?, ?, ?, ?,NULL,NULL,NULL)';
   connection.query(sql, [username, email, password, phone], (err, result) => {
       if (err) {
