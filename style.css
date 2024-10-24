@@ -379,7 +379,7 @@ input[type="password"] {
 ::placeholder{
     color: #ffffff;
 }
- /Review/
+
  .review-box {
     background: #fff;
     padding: 2rem;
@@ -558,7 +558,6 @@ input[type="password"] {
     background-size: cover;
 }
 .ot{
-    
     border: 2px solid black;
     width: 60%;
     border-radius: 10px;
@@ -581,12 +580,12 @@ input[type="password"] {
     box-shadow: 0.5cap 0.5cap rgb(2, 2, 18);
 }
 
-.book .txtarea .box:focus {
-    border-color: rgb(244, 244, 244);
+.book .txtarea .box::focus {
+    border-color: rgb(189, 21, 21);
     color: black;
     text-align: left;
 }
-.book .txtarea .box::placeholder {
+.book .txtarea .box:placeholder {
     color: black;
 }
 
@@ -819,4 +818,35 @@ input[type="password"] {
 #e1,#e2,#e3,#e4,#e5,#l1,#l2{
     padding-bottom: 8px;
     padding-left:3px;
+}
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    display: flex;
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.table-header .column, .table-header .cell {
+    flex: 1;
+    padding: 10px;
+}
+
+.table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-body .row {
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-body .cell {
+    flex: 1;
+    padding: 10px;
 }

@@ -102,16 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-};
-
-window.onscroll = () => {
-    menu.classList.remove('fa-times');
-    navbar.classList.remove('active');
-};
-
 document.querySelectorAll('.image-slider img').forEach(images => {
     images.onclick = () => {
         var src = images.getAttribute('src');
@@ -120,25 +110,40 @@ document.querySelectorAll('.image-slider img').forEach(images => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const reviewForm = document.getElementById('review-form');
-    const reviewsContainer = document.querySelector('.reviews-container');
-
-    reviewForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById('review-name').value.trim();
-        const reviewText = document.getElementById('review-text').value.trim();
-        const rating = parseInt(document.getElementById('review-rating').value);
-
-        if (!name || !reviewText || !rating) {
-            alert('Please fill in all fields.');
-            return;
+        const reviewForm = document.getElementById('review-form');
+        const reviewsContainer = document.getElementById('review-body');
+    
+        reviewForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            const name = document.getElementById('review-name').value.trim();
+            const reviewText = document.getElementById('review-text').value.trim();
+            const rating = parseInt(document.getElementById('review-rating').value);
+    
+            if (!name || !reviewText || !rating) {
+                alert('Please fill in all fields.');
+                return;
+            }
+    
+            addReview(name, reviewText, rating);
+            reviewForm.reset();
+        });
+    
+        function addReview(name, reviewText, rating) {
+            const newRow = document.createElement('div');
+            newRow.classList.add('row');
+    
+            newRow.innerHTML = `
+                <div class="cell">${name}</div>
+                <div class="cell">${reviewText}</div>
+                <div class="cell">${rating}</div>
+            `;
+    
+            reviewsContainer.appendChild(newRow);
         }
-
-        addReview(name, reviewText, rating);
-        reviewForm.reset();
     });
-});
+    
+
 
 function addReview(name, review, rating) {
     const reviewBody = document.getElementById('review-body');
@@ -149,17 +154,17 @@ function addReview(name, review, rating) {
 
     // Create columns for name, review, and rating
     const nameColumn = document.createElement('div');
-    nameColumn.classList.add('na');
+    nameColumn.classList.add('name');
     nameColumn.textContent = name;
     newRow.appendChild(nameColumn);
 
     const reviewColumn = document.createElement('div');
-    reviewColumn.classList.add('rev');
+    reviewColumn.classList.add('review');
     reviewColumn.textContent = review;
     newRow.appendChild(reviewColumn);
 
     const ratingColumn = document.createElement('div');
-    ratingColumn.classList.add('rat');
+    ratingColumn.classList.add('rating');
     // Create stars for rating
     for (let i = 0; i < rating; i++) {
         const star = document.createElement('i');
@@ -168,7 +173,6 @@ function addReview(name, review, rating) {
     }
     newRow.appendChild(ratingColumn);
 
-    // Append the new row to the table body
     reviewBody.appendChild(newRow);
 }
 
